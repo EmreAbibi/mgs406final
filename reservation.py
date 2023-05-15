@@ -1,7 +1,7 @@
 from flask import Flask, url_for, redirect, render_template, request
 from flask_bootstrap import Bootstrap
 
-import sqlite3 as sql
+import mysql.connector as sql
 app = Flask(__name__)
 Bootstrap(app)
 
@@ -16,14 +16,16 @@ def newres():
 
 @app.route('/addres',methods = ['POST', 'GET'])
 def addres():
-   if request.method == 'POST':
+  msg = ""
+  if request.method == 'POST':
       try:
          ResName = request.form['ResName']
          ResDate = request.form['ResDate']
          ResTime = request.form['ResTime']
          ResParty = request.form['ResParty']
          
-         with sql.connect("ferry.db") as con:
+         with sql.connect(host = "localhost", user = "root", password = "ubuntu", database = "ferry") as con:
+            print("Connected!")
             cur = con.cursor()
             cmd = "INSERT INTO reservations (ResName,ResDate,ResTime,ResParty) VALUES ('{0}','{1}','{2}','{3}')".format(ResName,ResDate,ResTime,ResParty)
             cur.execute(cmd)
@@ -40,14 +42,13 @@ def addres():
 
 @app.route('/schedule')
 def schedule():
-   con = sql.connect("ferry.db")
-   con.row_factory = sql.Row
+  with sql.connect(host = "localhost", user = "root", password = "ubuntu", database = "ferry") as con:
    
-   cur = con.cursor()
-   cur.execute("select * from reservations")
+    cur = con.cursor()
+    cur.execute("select * from reservations")
    
-   newress = cur.fetchall(); 
-   return render_template("schedule.htm",newress = newress)
+    newress = cur.fetchall(); 
+    return render_template("schedule.htm",newress = newress)
 
 if __name__ == '__main__':
    app.run(debug = True)

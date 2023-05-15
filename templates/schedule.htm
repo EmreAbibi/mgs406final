@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,12 +46,12 @@ a {
             <th>Departure Time</th>
             <th>Party Size</th>
         </tr>
-        {% for newres in newres %}
+        {% for x in newress %}
         <tr>
-            <td>{{ newres["ResName"] }}</td>
-            <td>{{ newres["ResDate"] }}</td>
-            <td>{{ newres["ResTime"] }}</td>
-            <td>{{ newres["ResParty"] }}</td>
+            <td>{{ x[0] }}</td>
+            <td>{{ x[1] }}</td>
+            <td>{{ x[2] }}</td>
+            <td>{{ x[3] }}</td>
         </tr>
         {% endfor %}
     </table>
