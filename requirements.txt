@@ -1,0 +1,34 @@
+MGS 406 Spring 2023 Final Project
+Prototype Development and Deployment
+
+You are asked to create a full stack prototypical web app using Python and Flask. A full stack app is an end-toend application. It includes both the front end (client side) and back end (server side) of the application.
+Front End
+The front end refers to what your users (clients) will actually see on the website in their browser. You will build
+your user interface with HTML, CSS, Bootstrap, etc. to provide a responsive and mobile friendly site.
+Back End
+The back end is the core of the application which supports business logics and data modeling. The back end
+includes the web server, templates, stylesheets, and the database. You will use MySQL to create simple
+database tables and deploy your app with the database on a simulated production server.
+Development server vs. production server
+A server in a development environment allows developers to access, test and control the app and the data. A
+development server provides features and feedback messages for configuration, troubleshooting and
+adminstration. A development server is often less secure and may not sustain heavy traffic.
+A production server, on the other hand, is designed to run live applications or services that are accessible to
+end-users. The production server is typically configured to optimize performance, stability, and reliability.
+When you finish the design and development of the prototype, it will be deployed to a production server.
+
+Prototype Requirement
+
+Create a simple, lightweight, prototypical web app using Python and Flask. The app does not have to be multifunctional and powerful. It is just a simple deliverable to prove your skills in design, development and
+deployment of a full stack application. You do NOT have to worry about security features in development and
+deployment. For example, password security is not a concern in this project.
+Here are the requirements of this project:
+1. Select a use case of your app. The use case can be as simple as ordering foods, purchasing products,
+booking tickets, etc.
+2. Create simple web interface pages with HTML, CSS and Bootstrap. The web interface will allow your users
+to interact with the app to complete a transaction.
+3. Develop Python code to control the business logic in the app. The transaction data must be storage in a
+MySQL database and the data must be retrievable in the app.
+4. Test the app on a development server (localhost:5000) and make sure it is well functioning.
+5. Deploy the completed app to a production server using Gunicorn.
+6. Upload your repository including the code and any dependency files to Github.com
