@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+  <head>
+  <style>
+  
+  h2 {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+}
+
+a {
+  background-color: cadetblue;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+</style>
+
+    <title>Confirmation Page</title>
+  </head>
+  <body>
+    <h2>Thank you for your patronage!</h2>
+    <p>Here's the information you entered:</p>
+    <ul>
+      <li>Full Name: {{request.form['ResName']}}</li>
+      <li>Departure Time: {{request.form['ResDate']}}</li>
+      <li>Departure Time: {{request.form['ResTime']}}</li>
+      <li>Party Size: {{request.form['ResParty']}}</li>
+    </ul>
+    <a href="/">Home</a>
+  </body>
+</html>

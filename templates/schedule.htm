@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ferry Schedule</title>
+    <style>
+    
+      h3 {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+}
+
+a {
+  background-color: cadetblue;
+  color: white;
+  padding: 5px 8px;
+  text-decoration: none;
+  border-radius: 5px;
+}
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            text-align: left;
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: black;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Reservation List:</h1>
+    <table>
+        <tr>
+            <th>Full Name</th>
+            <th>Departure Date</th>
+            <th>Departure Time</th>
+            <th>Party Size</th>
+        </tr>
+        {% for newres in newres %}
+        <tr>
+            <td>{{ newres["ResName"] }}</td>
+            <td>{{ newres["ResDate"] }}</td>
+            <td>{{ newres["ResTime"] }}</td>
+            <td>{{ newres["ResParty"] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <a href="/">Home</a>
+</body>
+</html>
